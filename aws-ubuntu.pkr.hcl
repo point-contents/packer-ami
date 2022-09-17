@@ -47,7 +47,7 @@ build {
   }
 
   provisioner "file" {
-	source = "/home/ec2-user/"
+	source = "/tmp/ami-builder/file.html"
 	destination = "manifest/${local.timestamp}/"
 	direction = "download"
   }
