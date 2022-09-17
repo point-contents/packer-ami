@@ -1,0 +1,39 @@
+{
+    "Architecture": "x86_64",
+    "CreationDate": "2022-08-15T14:30:08.000Z",
+    "ImageId": "ami-0402a7e1f547e7a49",
+    "ImageLocation": "aws-marketplace/CIS Alma Linux 8 Benchmark v2.0.0.0 - Level 1-d57b3c28-2987-4c20-a766-99baafe0bc2e",
+    "ImageType": "machine",
+    "Public": true,
+    "OwnerId": "679593333241",
+    "PlatformDetails": "Linux/UNIX",
+    "UsageOperation": "RunInstances",
+    "ProductCodes": [
+        {
+            "ProductCodeId": "cmzn7kphvw6p4am6ix3hy9v72",
+            "ProductCodeType": "marketplace"
+        }
+    ],
+    "State": "available",
+    "BlockDeviceMappings": [
+        {
+            "DeviceName": "/dev/sda1",
+            "Ebs": {
+                "DeleteOnTermination": true,
+                "SnapshotId": "snap-0ac2c5bea0d6b6b60",
+                "VolumeSize": 15,
+                "VolumeType": "gp2",
+                "Encrypted": false
+            }
+        }
+    ],
+    "EnaSupport": true,
+    "Hypervisor": "xen",
+    "ImageOwnerAlias": "aws-marketplace",
+    "Name": "CIS Alma Linux 8 Benchmark v2.0.0.0 - Level 1-d57b3c28-2987-4c20-a766-99baafe0bc2e",
+    "RootDeviceName": "/dev/sda1",
+    "RootDeviceType": "ebs",
+    "SriovNetSupport": "simple",
+    "VirtualizationType": "hvm",
+    "DeprecationTime": "2024-08-15T14:30:08.000Z"
+}

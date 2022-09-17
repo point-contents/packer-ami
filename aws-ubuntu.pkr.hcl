@@ -7,20 +7,32 @@ packer {
   }
 }
 
+variable "ami_prefix" {
+  type = string
+  default = "Alma 8 - CIS Level 1"
+}
+
+locals {
+  timestamp = regex_replace(timestamp(), "[- TZ:]", "")
+}
+
 source "amazon-ebs" "ubuntu" {
-  ami_name      = "learn-packer-linux-aws"
-  instance_type = "t2.micro"
-  region        = "us-west-1"
+  ami_name      = "${var.ami_prefix} - ${local.timestamp}"
+  instance_type = "t3.small"
+  region        = "us-east-1"
   source_ami_filter {
     filters = {
-      name                = "ubuntu/images/*ubuntu-xenial-16.04-amd64-server-*"
+      name                = "CIS Alma Linux 8*"
       root-device-type    = "ebs"
       virtualization-type = "hvm"
+	  hypervisor		  = "xen"
+	  architecture		  = "x86_64"
+
     }
     most_recent = true
-    owners      = ["099720109477"]
+    owners      = ["679593333241"]
   }
-  ssh_username = "ubuntu"
+  ssh_username = "ec2-user"
 }
 
 build {
@@ -28,5 +40,24 @@ build {
   sources = [
     "source.amazon-ebs.ubuntu"
   ]
+  
+  provisioner "shell" {
+	script = "script.sh"
+	execute_command = "{{.Vars}} bash '{{.Path}}'"
+  }
+
+  provisioner "file" {
+	source = "/home/ec2-user/"
+	destination = "manifest/${local.timestamp}/"
+	direction = "download"
+  }
+
+  post-processor "manifest" {
+	output = "manifest/${local.timestamp}/${local.timestamp}-manifest.json"
+  }
+  
+  post-processor "shell-local" {
+	inline = ["aws s3 cp manifest/${local.timestamp}/ s3://test-ami-builder-test/manifest/${local.timestamp}/ --recursive"]
+  } 
 }
 
