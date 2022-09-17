@@ -1,0 +1,14 @@
+{
+  "builds": [
+    {
+      "name": "alma",
+      "builder_type": "amazon-ebs",
+      "build_time": 1663409979,
+      "files": null,
+      "artifact_id": "us-east-1:ami-09877ac9cd1b44f5e",
+      "packer_run_uuid": "6d08a97d-24bd-b77c-e4f7-036b0c016145",
+      "custom_data": null
+    }
+  ],
+  "last_run_uuid": "6d08a97d-24bd-b77c-e4f7-036b0c016145"
+}

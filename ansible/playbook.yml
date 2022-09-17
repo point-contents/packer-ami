@@ -1,0 +1,11 @@
+---
+- name: 'Provision Packages'
+  hosts: default
+  become: true
+
+  tasks:
+    - name: install Tmux
+      package:
+        name: 'tmux'
+        state: present
+
