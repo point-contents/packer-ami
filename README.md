@@ -56,7 +56,7 @@ These need to be either attached to the user, or a role that the user can assume
             "Action": [
                 "s3:ListBucket"
             ],
-            "Resource": "arn:aws:s3:::test-ami-builder-test"
+            "Resource": "arn:aws:s3:::BUCKET"
         },
         {
             "Effect": "Allow",
@@ -65,7 +65,7 @@ These need to be either attached to the user, or a role that the user can assume
                 "s3:ListBucket"
             ],
             "Resource": [
-                "arn:aws:s3:::test-ami-builder-test/*"
+                "arn:aws:s3:::BUCKET/*"
             ]
         }
     ]
