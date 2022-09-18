@@ -5,7 +5,7 @@ Takes the most recent AlmaLinux 8 from the CIS profile on AWS marketplace.
 Updates all packages, and can do further customisations.
 
 Packer script has a few examples of customisations (Ansible, Arbitrary Bash) that can happen on the build EC2.
-This EC2 is then exported as an AMI that can be used to provision further AMI's.
+This EC2 is then exported as an AMI that can be used to provision further EC2's.
 
 There is further configuration that can be made in the packer script, such as distrubuting images over different
 regions.
