@@ -1,11 +1,23 @@
 ---
-- name: 'Provision Packages'
-  hosts: default
-  become: true
+
+- name: Update all
+  hosts: all
+  become: yes
+  gather_facts: no
 
   tasks:
-    - name: install Tmux
-      package:
-        name: 'tmux'
-        state: present
+    - name: Install Tmux
+      ansible.builtin.package:
+        name:
+          - "tmux"
+        state: installed
+
+    - name: Update packages
+      ansible.builtin.package:
+        name:
+          - "*"
+        state: latest
+
+    - name: Reboot machine
+      ansible.builtin.reboot:
 

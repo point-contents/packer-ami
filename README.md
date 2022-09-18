@@ -13,8 +13,10 @@ regions.
 After running, a manifest is uploaded to a timestamped folder in a s3 bucket. An example of these manifests is in the manifest folder
 
 
-> TODO create either terraform or cdk to create s3 bucket and 
-> iam user, role, and permissions. Add tagging to AMI's
+> TODO 
+> - Create either terraform or cdk to create s3 bucket, iam user, role, and permissions.
+> - Add tagging to AMI's
+> - Add packer runtime logs to the manifest folder
 
 ## Usage
 

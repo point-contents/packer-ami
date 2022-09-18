@@ -28,7 +28,8 @@ source "amazon-ebs" "alma" {
     owners      = ["679593333241"]
   }
   ssh_username = "ec2-user"
-  #skip_create_ami = true
+  ssh_read_write_timeout = "5m"
+  #skip_create_ami = true # uncomment for testing, makes things much quicker
 }
 
 build {
