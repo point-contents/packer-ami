@@ -10,7 +10,8 @@ This EC2 is then exported as an AMI that can be used to provision further AMI's.
 There is further configuration that can be made in the packer script, such as distrubuting images over different
 regions.
 
-After running, a manifest is uploaded to a timestamped folder in a s3 bucket.
+After running, a manifest is uploaded to a timestamped folder in a s3 bucket. An example of these manifests is in the manifest folder
+
 
 > TODO create either terraform or cdk to create s3 bucket and 
 > iam user, role, and permissions. Add tagging to AMI's
